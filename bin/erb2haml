@@ -1,13 +1,5 @@
-#!/bin/bash
-dir=$@
-[ -z ${dir} ] && dir="."
-for fn in $(find ${dir} -name '*.erb'); do
-  src=${fn}
-  dst=${fn/%erb/haml}
-  echo -n "Converting ${src} to ${dst} ... "
-  if html2haml --erb --unix-newlines ${src} ${dst}; then
-    echo "OK"
-  else
-    echo "ERROR"
-  fi
-done
+#/usr/bin/env ruby -w
+# -*- encoding: utf-8 -*-
+
+require File.expand_path('../../lib/erb2haml_cli', __FILE__)
+Erb2hamlCli.run ARGV
