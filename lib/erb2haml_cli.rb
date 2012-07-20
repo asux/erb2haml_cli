@@ -13,8 +13,10 @@ module Erb2hamlCli
     begin_text_style + text + END_TEXT_STYLE
   end
 
-  def self.run(argv)
-    return usage if argv.grep(/--help/)
+  def self.run(argv=[])
+    if !argv.grep('--help').first.nil? or !argv.grep('-h').first.nil?
+      return usage
+    end
 
     if `which html2haml`.empty?
       puts "#{color "ERROR: ", RED_FG} Could not find " +
@@ -32,7 +34,7 @@ module Erb2hamlCli
 
     Find.find(dir) do |path|
       if FileTest.file?(path) and path.downcase.match(/\.erb$/i)
-        haml_path = path.gsub("erb", "haml")
+        haml_path = path.gsub(".erb", ".haml")
 
         unless FileTest.exists?(haml_path)
           print "Converting: #{path}... "
