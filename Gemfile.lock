@@ -1,8 +1,9 @@
 PATH
   remote: .
   specs:
-    erb2haml_cli (0.0.1)
+    erb2haml_cli (0.0.3)
       erubis (> 0)
+      haml (> 0)
       hpricot (> 0)
       ruby_parser (> 0)
 
@@ -10,10 +11,11 @@ GEM
   remote: https://rubygems.org/
   specs:
     erubis (2.7.0)
+    haml (3.1.7)
     hpricot (0.8.6)
-    ruby_parser (2.3.1)
-      sexp_processor (~> 3.0)
-    sexp_processor (3.2.0)
+    ruby_parser (3.0.2)
+      sexp_processor (~> 4.1)
+    sexp_processor (4.1.2)
 
 PLATFORMS
   ruby

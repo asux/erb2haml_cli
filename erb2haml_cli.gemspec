@@ -16,6 +16,7 @@ Gem::Specification.new do |gem|
   gem.version       = Erb2hamlCli::VERSION
 
   # Dependencies
+  gem.add_dependency "haml", ">0"
   gem.add_dependency "hpricot", ">0"
   gem.add_dependency "erubis", ">0"
   gem.add_dependency "ruby_parser", ">0"
